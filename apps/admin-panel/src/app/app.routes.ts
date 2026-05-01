@@ -17,6 +17,13 @@ export const appRoutes: Route[] = [
             (c) => c.TaskListComponent
           ),
       },
+      {
+        path: 'new',
+        loadComponent: () =>
+          import('./components/task-form/task-form.component').then(
+            (c) => c.TaskFormComponent
+          ),
+      },
     ],
   },
 ];
