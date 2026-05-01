@@ -17,7 +17,7 @@ export enum Priority {
   high = 'High',
 }
 
-export interface ITask extends IdentifiedEntity {
+export interface Task extends IdentifiedEntity {
   category?: Categories;
   title?: string;
   priority?: Priority;

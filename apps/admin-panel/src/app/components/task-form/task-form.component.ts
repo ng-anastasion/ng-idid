@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,7 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
-import { Categories, ITask, Priority } from '../../models/task.model';
+import { Categories, Priority, Task } from '../../models/task.model';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-task-form',
@@ -31,6 +32,7 @@ import { Categories, ITask, Priority } from '../../models/task.model';
 })
 export class TaskFormComponent {
   taskForm: FormGroup;
+  private tasksService = inject(TasksService);
 
   // Вытаскиваем ключи енамов для итерации в шаблоне
   categories = Object.values(Categories);
@@ -46,8 +48,14 @@ export class TaskFormComponent {
 
   onSubmit() {
     if (this.taskForm.valid) {
-      const newTask: ITask = this.taskForm.value;
-      console.log('Task Created:', newTask);
+      const newTask: Task = this.taskForm.value;
+      newTask.status = 'todo';
+      console.log('onSubmit', newTask);
+
+      this.tasksService.addTask(newTask).subscribe({
+        next: (response) => console.log('Task Created', response),
+        error: (err) => console.error('Ошибка!', err),
+      });
       this.taskForm.reset({
         category: Categories.home,
         priority: Priority.medium,

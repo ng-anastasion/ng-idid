@@ -1,33 +1,96 @@
 {
   "tasks": [
     {
-      "id": "1",
+      "title": "Помыть полы",
+      "category": "Home",
+      "id": "Xj8Kmc9W2pL",
+      "priority": "Medium",
+      "status": "completed"
+    },
+    {
+      "title": "Резюме",
+      "category": "Work",
+      "id": "vN4Sqr5Tb1m",
+      "priority": "High",
+      "status": "in-progress"
+    },
+    {
+      "title": "Сходить в спортзал",
+      "category": "Beauty",
+      "id": "Gb2Hzx8Yk0w",
+      "priority": "High",
+      "status": "todo"
+    },
+    {
+      "title": "Составить меню",
+      "category": "Food",
+      "id": "Pm1Rtv4Nq5x",
+      "priority": "Medium",
+      "status": "in-progress"
+    },
+    {
       "title": "Изучить Angular HttpClient",
-      "description": "Разобраться с методами get, post, put, delete",
+      "category": "Work",
+      "id": "Lw9Kcb2Vj7z",
+      "priority": "High",
       "status": "in-progress",
-      "priority": "high",
-      "category": "work"
+      "description": "Разобраться с методами get, post, put, delete"
     },
     {
-      "id": "2",
       "title": "Настроить JSON Server",
-      "description": "Создать базу данных и скрипты запуска",
+      "category": "Work",
+      "id": "fG3Hns9Mw8p",
+      "priority": "Medium",
       "status": "completed",
-      "priority": "medium",
-      "category": "work"
+      "description": "Создать базу данных и скрипты запуска"
     },
     {
-      "id": "3",
       "title": "Сделать крутой UI",
-      "description": "Добавить Angular Material или Tailwind",
+      "category": "Work",
+      "id": "tY5Rkc1Bx6q",
+      "priority": "Low",
       "status": "todo",
-      "priority": "low",
-      "category": "work"
+      "description": "Добавить Angular Material или Tailwind"
+    },
+    {
+      "title": "Купить масло",
+      "category": "Home",
+      "id": "dQ8Mzv4Wp2L",
+      "priority": "High",
+      "status": "todo"
+    },
+    {
+      "title": "Купить рыбу",
+      "category": "Food",
+      "id": "hZ1Lvc5Nf7m",
+      "priority": "Low",
+      "status": "todo"
+    },
+    {
+      "title": "Гимнастика лица",
+      "category": "Beauty",
+      "priority": "High",
+      "id": "nB6Sjx9Kr3t",
+      "status": "todo"
+    },
+    {
+      "title": "Протереть пыль",
+      "category": "Home",
+      "priority": "Low",
+      "id": "QshLadUkVYY",
+      "status": "todo"
+    },
+    {
+      "title": "Ремонт кухни",
+      "category": "Home",
+      "priority": "Low",
+      "status": "todo",
+      "id": "rgfCRRHFT3w"
     }
   ],
   "users": [
     {
-      "id": "1",
+      "id": "Zk4Pmw8Rt2X",
       "name": "Иван Иванов",
       "role": "admin"
     }
@@ -35,5 +98,6 @@
   "settings": {
     "theme": "dark",
     "notifications": true
-  }
+  },
+  "$schema": "./node_modules/json-server/schema.json"
 }

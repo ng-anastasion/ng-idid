@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Categories, ITask, Priority } from '../../models/task.model';
+import { Component, inject, OnInit } from '@angular/core';
+import { Categories } from '../../models/task.model';
 import { DistributeColorPipe } from '../../pipes/distribute-color.pipe';
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-task-list',
@@ -12,42 +13,22 @@ import { DistributeColorPipe } from '../../pipes/distribute-color.pipe';
 export class TaskListComponent implements OnInit {
   public randomOffset = 0;
   public tasksMap = new Map();
+  private tasksService = inject(TasksService);
 
   protected categoriesArray = Object.values(Categories).filter(
     (v) => typeof v === 'string'
   );
 
-  private tasks: ITask[] = [
-    {
-      category: Categories.home,
-      title: 'Помыть полы',
-      priority: Priority.medium,
-    },
-    {
-      category: Categories.work,
-      title: 'Резюме',
-      priority: Priority.high,
-    },
-    {
-      category: Categories.beauty,
-      title: 'Сходить в спортзал',
-      priority: Priority.high,
-    },
-    {
-      category: Categories.food,
-      title: 'Составить меню',
-      priority: Priority.medium,
-    },
-  ];
-
   ngOnInit() {
     this.randomOffset = Math.floor(Math.random() * 360);
 
-    this.categoriesArray.forEach((category) => {
-      this.tasksMap.set(
-        category,
-        this.tasks.filter((task) => task.category === category)
-      );
+    this.tasksService.getTasks().subscribe((tasks) => {
+      this.categoriesArray.forEach((category) => {
+        this.tasksMap.set(
+          category,
+          tasks.filter((task) => task.category === category)
+        );
+      });
     });
   }
 
