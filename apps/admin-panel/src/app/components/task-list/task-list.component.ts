@@ -1,24 +1,11 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Categories, ITask, Priority } from '../../models/task.model';
 import { DistributeColorPipe } from '../../pipes/distribute-color.pipe';
-
-enum Categories {
-  home = 'Home',
-  beauty = 'Beauty',
-  work = 'Work',
-  food = 'Food',
-}
-
-enum Priority {
-  low = 'Low',
-  medium = 'Medium',
-  high = 'High',
-}
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [DatePipe, DistributeColorPipe],
+  imports: [DistributeColorPipe],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss',
 })
@@ -30,7 +17,7 @@ export class TaskListComponent implements OnInit {
     (v) => typeof v === 'string'
   );
 
-  private tasks = [
+  private tasks: ITask[] = [
     {
       category: Categories.home,
       title: 'Помыть полы',
