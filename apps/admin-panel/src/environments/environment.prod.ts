@@ -1,4 +1,8 @@
+/**
+ * Realtime Database  подходит для мгновенной синхронизации данных (real-time) и легко интегрируется через REST API
+ */
 export const environment = {
   production: true,
-  apiUrl: 'https://typicode.com',
+  apiBaseUrl: 'https://my-ng-admin-panel-default-rtdb.firebaseio.com',
+  // apiSuffix: '.json'
 };
