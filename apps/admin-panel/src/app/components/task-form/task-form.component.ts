@@ -48,14 +48,17 @@ export class TaskFormComponent {
 
   onSubmit() {
     if (this.taskForm.valid) {
-      const newTask: Task = this.taskForm.value;
-      newTask.status = 'todo';
+      const newTask: Task = {
+        ...this.taskForm.value,
+        status: 'todo',
+      };
       console.log('onSubmit', newTask);
 
       this.tasksService.addTask(newTask).subscribe({
         next: (response) => console.log('Task Created', response),
         error: (err) => console.error('Ошибка!', err),
       });
+
       this.taskForm.reset({
         category: Categories.home,
         priority: Priority.medium,
