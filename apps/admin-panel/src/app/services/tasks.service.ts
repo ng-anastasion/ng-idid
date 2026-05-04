@@ -24,7 +24,7 @@ export class TasksService {
 
   private http = inject(HttpClient);
   // Используем путь через прокси /api
-  private readonly TASKS_URL = `${environment.apiUrl}/tasks`;
+  private readonly TASKS_URL = `${environment.apiBaseUrl}/tasks`;
 
   // Получить все задачи (READ)
   getTasks(): Observable<Task[]> {
