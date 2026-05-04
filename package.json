@@ -8,8 +8,10 @@
     "test": "nx test",
     "graph": "nx graph",
     "help": "nx help",
-    "server": "json-server --watch backend/db.json --static backend --port 3000",
-    "start:all": "concurrently \"npx nx serve admin-panel\" \"npm run server\""
+    "server": "json-server --watch db.json --port 3000 --host localhost",
+    "start:all": "concurrently \"npx nx serve admin-panel\" \"npm run server\"",
+    "build:prod": "npx nx build admin-panel --prod --base-href /ng-highcharts-canvas/",
+    "deploy": "npm run build:prod && npx gh-pages -d dist/apps/admin-panel"
   },
   "private": true,
   "dependencies": {

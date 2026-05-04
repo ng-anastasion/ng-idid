@@ -10,23 +10,36 @@
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/admin-panel",
-        "index": "admin-panel/src/index.html",
-        "browser": "admin-panel/src/main.ts",
+        "outputPath": "dist/apps/admin-panel",
+        "index": "apps/admin-panel/src/index.html",
+        "browser": "apps/admin-panel/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "admin-panel/tsconfig.app.json",
+        "tsConfig": "apps/admin-panel/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
+          "apps/admin-panel/src/assets",
           {
             "glob": "**/*",
-            "input": "admin-panel/public"
+            "input": "apps/admin-panel/public",
+            "output": "/"
           }
         ],
-        "styles": ["admin-panel/src/styles.scss"],
+        "styles": ["apps/admin-panel/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/admin-panel/src/environments/environment.ts",
+              "with": "apps/admin-panel/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractLicenses": true,
+          "namedChunks": false,
           "budgets": [
             {
               "type": "initial",
@@ -38,8 +51,7 @@
               "maximumWarning": "2kb",
               "maximumError": "4kb"
             }
-          ],
-          "outputHashing": "all"
+          ]
         },
         "development": {
           "optimization": false,
@@ -51,6 +63,9 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "proxyConfig": "apps/admin-panel/proxy.conf.json"
+      },
       "configurations": {
         "production": {
           "buildTarget": "admin-panel:build:production"
@@ -74,7 +89,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "admin-panel/jest.config.ts"
+        "jestConfig": "apps/admin-panel/jest.config.ts"
       }
     },
     "serve-static": {
@@ -82,7 +97,7 @@
       "options": {
         "buildTarget": "admin-panel:build",
         "port": 4200,
-        "staticFilePath": "dist/admin-panel/browser",
+        "staticFilePath": "apps/dist/admin-panel/browser",
         "spa": true
       }
     }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 import { Task } from '../models/task.model';
 
 @Injectable({ providedIn: 'root' })
@@ -23,27 +24,27 @@ export class TasksService {
 
   private http = inject(HttpClient);
   // Используем путь через прокси /api
-  private readonly API_URL = '/api/tasks';
+  private readonly TASKS_URL = `${environment.apiUrl}/tasks`;
 
   // Получить все задачи (READ)
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.API_URL);
+    return this.http.get<Task[]>(this.TASKS_URL);
   }
 
   // Добавить задачу (CREATE)
   addTask(task: Task): Observable<Task> {
     console.log('addTask', task);
 
-    return this.http.post<Task>(this.API_URL, task);
+    return this.http.post<Task>(this.TASKS_URL, task);
   }
 
   // Удалить задачу (DELETE)
   deleteTask(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.API_URL}/${id}`);
+    return this.http.delete<void>(`${this.TASKS_URL}/${id}`);
   }
 
   // Обновить задачу (UPDATE)
   updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.API_URL}/${task.id}`, task);
+    return this.http.put<Task>(`${this.TASKS_URL}/${task.id}`, task);
   }
 }
