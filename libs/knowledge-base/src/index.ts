@@ -1,1 +1,1 @@
-export * from './lib/knowledge-base/knowledge-base.component';
+export * from './lib/components/knowledge-base/knowledge-base.component';
