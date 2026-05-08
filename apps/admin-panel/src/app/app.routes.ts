@@ -1,29 +1,48 @@
-import { Route } from '@angular/router';
+import { Route, Routes } from '@angular/router';
 import { RouteName } from './app.consts';
 
-export const appRoutes: Route[] = [
+// база знаний
+// вс
+
+export const appRoutes_old: Route[] = [
   { path: '', redirectTo: RouteName.taskManager, pathMatch: 'full' },
   {
     path: RouteName.taskManager,
-    loadComponent: () =>
-      import('./components/task-manager/task-manager.component').then(
-        (c) => c.TaskManagerComponent
-      ),
+    loadComponent: () => import('').then((c) => c.KnowledgeBaseComponent),
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./components/task-list/task-list.component').then(
-            (c) => c.TaskListComponent
-          ),
+        loadComponent: () => import('').then((c) => c.TaskListComponent),
       },
       {
         path: 'new',
-        loadComponent: () =>
-          import('./components/task-form/task-form.component').then(
-            (c) => c.TaskFormComponent
-          ),
+        loadComponent: () => import('').then((c) => c.TaskFormComponent),
       },
     ],
   },
+];
+
+export const appRoutes: Routes = [
+  { path: '', redirectTo: 'knowledge', pathMatch: 'full' },
+  // {
+  //   path: 'dashboard',
+  //   loadComponent: () =>
+  //     import('./pages/dashboard/dashboard.component').then(
+  //       (m) => m.DashboardComponent
+  //     ),
+  // },
+  {
+    path: 'knowledge',
+    loadComponent: () =>
+      import('@ng-highcharts-canvas/knowledge-base').then(
+        (m) => m.KnowledgeBaseComponent
+      ),
+  },
+  // {
+  //   path: 'admin',
+  //   loadComponent: () =>
+  //     import('@ng-highcharts-canvas/knowledge-base').then(
+  //       (m) => m.ArticleFormComponent
+  //     ),
+  // },
 ];

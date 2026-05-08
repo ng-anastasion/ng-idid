@@ -10,5 +10,10 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'admin-panel';
+  readonly menuItems: NavItem[] = [
+    { label: 'Dashboard', icon: 'dashboard', route: '/dashboard' },
+    { label: 'Life Planner', icon: 'account_tree', route: '/life-planner' },
+    { label: 'Knowledge Base', icon: 'auto_stories', route: '/knowledge' },
+    { label: 'Admin Panel', icon: 'post_add', route: '/admin' },
+  ];
 }

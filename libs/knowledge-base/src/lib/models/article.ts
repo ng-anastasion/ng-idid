@@ -58,3 +58,9 @@ export interface Article {
  * http://localhost:3000/articles?technology=JavaScript — отфильтрует только JS
  * http://localhost:3000/articles?difficulty=Middle — только средний уровень
  */
+
+/**
+ * lastReviewed: Date — для алгоритмов интервального повторения
+ * rating: number — сложность вопроса лично для тебя (1–5)
+ * isSolved: boolean — для задач (coding tasks)
+ */

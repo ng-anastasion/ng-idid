@@ -1,0 +1,7 @@
+<div class="articles-list">
+  @for (article of articles; track article.id) {
+  <lib-article-card></lib-article-card>
+  } @empty {
+  <div class="empty-state">Вопросы не найдены</div>
+  }
+</div>

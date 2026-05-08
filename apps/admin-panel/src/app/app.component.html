@@ -1,3 +1,12 @@
 <div class="main-page">
-  <router-outlet></router-outlet>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <!-- Передаем конфиг меню в либу -->
+      <shared-ui-sidebar [items]="menuItems" />
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
