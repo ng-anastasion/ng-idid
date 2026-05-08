@@ -3,9 +3,9 @@ import { Component, inject } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { KnowledgeBaseStore } from '../../store/knowledge-base.store';
-import { ArticleFilterComponent } from '../article-filter/article-filter.component.component';
-import { ArticleFormComponent } from '../article-form/article-form.component.component';
-import { ArticleListComponent } from '../article-list/article-list.component.component';
+import { ArticleFilterComponent } from '../article-filter/article-filter.component';
+import { ArticleFormComponent } from '../article-form/article-form.component';
+import { ArticleListComponent } from '../article-list/article-list.component';
 
 @Component({
   selector: 'lib-knowledge-base',

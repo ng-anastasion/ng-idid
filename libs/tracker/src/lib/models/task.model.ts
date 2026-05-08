@@ -1,4 +1,4 @@
-import { IdentifiedEntity } from './basic.models';
+import { IdentifiedEntity } from '../../../../shared/src/lib/models/basic.models';
 
 export const RISK_I18N: string = 'Risk';
 

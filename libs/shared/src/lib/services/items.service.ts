@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { Task } from '../models/task.model';
 
 @Injectable({ providedIn: 'root' })
-export class TasksService {
+export class ItemsService {
   /**
    * localStorage
    */
@@ -25,11 +23,11 @@ export class TasksService {
 
   private http = inject(HttpClient);
   // Используем путь через прокси /api
-  private readonly TASKS_URL = `${environment.apiBaseUrl}/tasks`;
+  // private readonly TASKS_URL = `${environment.apiBaseUrl}/tasks`;
 
   // Получить все задачи (READ)
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.TASKS_URL).pipe(
+  getTasks(url: string): Observable<any[]> {
+    return this.http.get<any[]>(url).pipe(
       map((res) => {
         if (!res) return [];
 
@@ -44,37 +42,37 @@ export class TasksService {
         // 2. ЗАЧИСТКА: убираем всё, что не является объектом задачи
         // (удаляем строку $schema и возможные null)
         return rawTasks.filter(
-          (task) =>
-            task && typeof task === 'object' && !task.hasOwnProperty('$schema')
-        ) as Task[];
+          (item) =>
+            item && typeof item === 'object' && !item.hasOwnProperty('$schema')
+        ) as any[];
       })
     );
   }
 
   // Добавить задачу (CREATE)
-  addTask(task: Task): Observable<Task> {
-    console.log('addTask', task);
+  addTask(url: string, item: any): Observable<any> {
+    console.log('addTask', item);
 
-    return this.http.post<any>(this.TASKS_URL, task).pipe(
+    return this.http.post<any>(url, item).pipe(
       map((res) => {
         // 1. Если пришел ответ от Firebase (объект с полем name)
         if (res && res.name) {
-          return { ...task, id: res.name };
+          return { ...item, id: res.name };
         }
 
         // 2. Если пришел ответ от локального json-server (весь объект с id)
-        return res as Task;
+        return res as any;
       })
     );
   }
 
   // Удалить задачу (DELETE)
-  deleteTask(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.TASKS_URL}/${id}`);
+  deleteTask(url: string, id: string): Observable<void> {
+    return this.http.delete<void>(`${url}/${id}`);
   }
 
   // Обновить задачу (UPDATE)
-  updateTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.TASKS_URL}/${task.id}`, task);
+  updateTask(url: string, item: any): Observable<any> {
+    return this.http.put<any>(`${url}/${item.id}`, item);
   }
 }

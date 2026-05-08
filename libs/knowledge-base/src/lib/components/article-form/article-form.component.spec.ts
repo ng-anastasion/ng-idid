@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ArticleFormComponent } from './article-form.component.component';
+import { ArticleFormComponent } from './article-form.component';
 
 describe('ArticleFormComponent', () => {
   let component: ArticleFormComponent;

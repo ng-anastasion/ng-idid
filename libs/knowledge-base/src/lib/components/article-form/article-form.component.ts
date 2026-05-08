@@ -42,8 +42,8 @@ interface ArticleForm {
     MatIconModule,
     ReactiveFormsModule,
   ],
-  templateUrl: './article-form.component.component.html',
-  styleUrl: './article-form.component.component.scss',
+  templateUrl: './article-form.component.html',
+  styleUrl: './article-form.component.scss',
 })
 export class ArticleFormComponent {
   private readonly fb = inject(NonNullableFormBuilder); // NonNullableFormBuilder

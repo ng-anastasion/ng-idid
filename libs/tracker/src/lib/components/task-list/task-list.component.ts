@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { TasksService } from '../../../../../shared/src/lib/services/items.service';
 import { Categories } from '../../models/task.model';
 import { DistributeColorPipe } from '../../pipes/distribute-color.pipe';
-import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-task-list',

@@ -14,7 +14,11 @@
     "paths": {
       "@ng-highcharts-canvas/knowledge-base": [
         "libs/knowledge-base/src/index.ts"
-      ]
+      ],
+      "@ng-highcharts-canvas/shared": ["libs/shared/src/index.ts"],
+      "@ng-highcharts-canvas/todo-tracker": ["libs/todo-tracker/src/index.ts"],
+      "@ng-highcharts-canvas/tracker": ["libs/tracker/src/index.ts"],
+      "@ng-highcharts-canvas/training": ["libs/training/src/index.ts"]
     }
   }
 }
