@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": "1",
-      "title": "В каком порядке выведутся логи",
+      "title": "",
       "question": "В каком порядке выведутся логи: console.log('1'); setTimeout(() => console.log('2'), 0); Promise.resolve().then(() => console.log('3')); console.log('4');",
       "answer": "1, 4, 3, 2",
       "description": "Классическая задача на понимание Event Loop: сначала синхронный код, затем микрозадачи (Promise), затем макрозадачи (setTimeout).",
@@ -13,7 +13,7 @@
     },
     {
       "id": "2",
-      "title": "Разница Interface и Type",
+      "title": "",
       "question": "В чем разница между Interface и Type в TypeScript?",
       "answer": "Interface поддерживает декларативное слияние (merging), а Type — нет. Type более гибок для создания алиасов примитивов, объединений (unions) и кортежей.",
       "description": "Базовый вопрос по архитектуре типов в TS.",
@@ -24,7 +24,7 @@
     },
     {
       "id": "3",
-      "title": "Разница Angular Signals и RxJS Subject",
+      "title": "",
       "question": "Что такое Angular Signals и чем они отличаются от RxJS Subject?",
       "answer": "Signals — это синхронное реактивное состояние с автоматическим отслеживанием зависимостей (glitch-free). В отличие от RxJS, им не нужна явная отписка, и они всегда имеют значение.",
       "description": "Вопрос по новым фичам Angular 16/17/18.",
@@ -35,7 +35,7 @@
     },
     {
       "id": "4",
-      "title": "Механизм provide/inject",
+      "title": "",
       "question": "Как работает механизм provide/inject в Angular?",
       "answer": "Это альтернатива инъекции через конструктор, позволяющая получать зависимости вне классов (например, в функциях-гардах или внутри других функций), используя InjectionToken.",
       "description": "Вопрос на понимание Dependency Injection.",
@@ -46,7 +46,7 @@
     },
     {
       "id": "5",
-      "title": "Blue-Green deployment",
+      "title": "",
       "question": "Что такое Blue-Green deployment?",
       "answer": "Метод релиза, при котором создаются две идентичные среды: Blue (текущая версия) и Green (новая). Трафик переключается на Green только после успешного тестирования.",
       "description": "Вопрос по стратегии деплоя в CICD.",
@@ -56,7 +56,7 @@
       "difficulty": "Senior"
     },
     {
-      "title": "Типы данных в JS",
+      "title": "",
       "question": "Перечислите типы данных в JS согласно последней документации?",
       "answer": "8 типов",
       "description": "",
