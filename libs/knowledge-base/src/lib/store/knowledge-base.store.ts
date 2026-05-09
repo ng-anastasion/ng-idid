@@ -10,7 +10,7 @@ import { rxMethod } from '@ngrx/signals/rxjs-interop'; // Обязательно
 import { pipe, switchMap, tap } from 'rxjs';
 
 import { Difficulty, Question, Technology } from '../models/question';
-import { QuestionsService } from '../services/questions.service';
+import { QuestionsService } from '../services/question.service';
 
 export const KnowledgeBaseStore = signalStore(
   { providedIn: 'root' },
