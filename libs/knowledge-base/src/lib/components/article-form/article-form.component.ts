@@ -22,7 +22,6 @@ import {
 import { KnowledgeBaseStore } from '../../store/knowledge-base.store';
 
 interface ArticleForm {
-  title: FormControl<string>;
   question: FormControl<string>;
   answer: FormControl<string>;
   description: FormControl<string>;
@@ -59,9 +58,6 @@ export class ArticleFormComponent {
   difficulties = Object.values(Difficulty);
 
   public form = this.fb.group<ArticleForm>({
-    title: this.fb.control('', {
-      validators: [Validators.required],
-    }),
     question: this.fb.control('', {
       validators: [Validators.required, Validators.minLength(5)],
     }),

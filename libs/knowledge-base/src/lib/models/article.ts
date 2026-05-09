@@ -43,17 +43,13 @@ export enum Difficulty {
 export type ArticleTopic = JSTopic | AngularTopic | string;
 
 export interface Article extends IdentifiedEntity {
-  // extends IdentifiedEntity
-  title: string;
+  title?: string;
   question: string;
   answer: string;
   description: string;
   company: Company;
-
-  // Новые поля для классификации
-  technology: Technology; // Например: Technology.JS
-  topic: ArticleTopic; // Например: JSTopic.EventLoop
-
+  technology: Technology;
+  topic: ArticleTopic;
   difficulty?: Difficulty;
 }
 

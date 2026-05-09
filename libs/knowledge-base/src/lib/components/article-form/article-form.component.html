@@ -6,19 +6,6 @@
   <h2 class="form-title">Добавить новый вопрос</h2>
 
   <div class="form-grid">
-    <!-- Вопрос -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Вопрос кратко</mat-label>
-      <input
-        matInput
-        formControlName="title"
-        placeholder="Например: Как работает Event Loop?"
-      />
-      @if (form.controls.title.invalid && form.controls.title.touched) {
-      <mat-error>Вопрос кратко обязателен (минимум 5 символов)</mat-error>
-      }
-    </mat-form-field>
-
     <!-- Технология и Топик -->
     <mat-form-field appearance="outline">
       <mat-label>Технология</mat-label>
@@ -53,12 +40,20 @@
       </mat-select>
     </mat-form-field>
 
-    <!-- Описание и Ответ -->
+    <!-- Вопрос -->
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Вопрос полно</mat-label>
-      <input matInput formControlName="question" />
+      <mat-label>Вопрос</mat-label>
+      <input
+        matInput
+        formControlName="question"
+        placeholder="Например: Как работает Event Loop?"
+      />
+      @if (form.controls.question.invalid && form.controls.question.touched) {
+      <mat-error>Вопрос обязателен (минимум 5 символов)</mat-error>
+      }
     </mat-form-field>
 
+    <!-- Описание и Ответ -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Доп описание</mat-label>
       <input matInput formControlName="description" />
