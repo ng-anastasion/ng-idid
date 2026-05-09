@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular Project
-        run: npx nx build admin-panel --prod --base-href /ng-highcharts-canvas/
+        run: npx nx build admin-panel --prod --base-href /ng-highcharts/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

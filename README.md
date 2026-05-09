@@ -63,7 +63,7 @@ libs/
 ```bash
 # Клонировать репозиторий
 git clone <url-твоего-репозитория>
-cd ng-highcharts-canvas
+cd ng-highcharts
 
 # Установить зависимости (с учетом CI-разрешений peer-зависимостей)
 npm install --legacy-peer-deps

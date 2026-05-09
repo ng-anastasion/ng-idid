@@ -1,5 +1,5 @@
 {
-  "name": "ng-highcharts-canvas",
+  "name": "ng-highcharts",
   "version": "0.0.0",
   "scripts": {
     "start:admin": "nx serve admin-panel",
@@ -10,7 +10,7 @@
     "help": "nx help",
     "server": "json-server --watch db.json --port 3000 --host localhost",
     "start:all": "concurrently \"npx nx serve admin-panel\" \"npm run server\"",
-    "build:prod": "npx nx build admin-panel --prod --base-href /ng-highcharts-canvas/",
+    "build:prod": "npx nx build admin-panel --prod --base-href /ng-highcharts/",
     "deploy": "npm run build:prod && npx gh-pages -d dist/apps/admin-panel"
   },
   "private": true,
