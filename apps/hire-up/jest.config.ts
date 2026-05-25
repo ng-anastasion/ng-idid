@@ -1,8 +1,8 @@
 export default {
-  displayName: 'tracker',
+  displayName: 'hire-up',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/libs/tracker',
+  coverageDirectory: '../../coverage/apps/hire-up',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
