@@ -1,4 +1,86 @@
-:host {
-  height: 100%;
+/* Общий контейнер страницы */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+  /* Slate 800 */
+}
+
+/* Шапка дашборда */
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  /* Slate 900 */
+  margin: 0 0 8px 0;
+  letter-spacing: -0.025em;
+}
+
+.dashboard-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  /* Slate 500 */
+  margin: 0;
+}
+
+/* Навигационная панель с табами */
+.tabs-navigation {
   display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  /* Slate 200 */
+  margin-bottom: 32px;
+  padding-bottom: 2px;
+}
+
+/* Стили вкладок (ссылок) */
+.tabs-navigation a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+  /* Slate 500 */
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -4px;
+  /* Перекрываем border навигации */
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Ховер на вкладки */
+.tabs-navigation a:hover {
+  color: #0f172a;
+  /* Slate 900 */
+  background-color: #f8fafc;
+  /* Slate 50 */
+}
+
+/* Активное состояние вкладки (класс вешается через routerLinkActive) */
+.tabs-navigation a.active {
+  color: #2563eb;
+  /* Blue 600 */
+  border-bottom-color: #2563eb;
+  /* Синяя линия снизу */
+  background-color: #eff6ff;
+  /* Очень легкий синий фон */
+}
+
+/* Контентная область */
+.dashboard-content {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  min-height: 400px;
 }

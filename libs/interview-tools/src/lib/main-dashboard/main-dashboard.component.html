@@ -1,1 +1,22 @@
-<lib-resume-screener-page></lib-resume-screener-page>
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <!-- Вытаскиваем заголовок активного дочернего роута -->
+    <h1>{{ currentTitle() }}</h1>
+    <p>Инструменты для прокачки резюме и безопасного трудоустройства</p>
+  </header>
+
+  <!-- Навигация (ссылки на дочерние роуты) -->
+  <nav class="tabs-navigation">
+    <a routerLink="resume-screener" routerLinkActive="active">
+      🔍 Скринер Резюме
+    </a>
+    <a routerLink="contract-screener" routerLinkActive="active">
+      🛡️ Проверка Договора
+    </a>
+  </nav>
+
+  <!-- Сюда Angular автоматически подставит нужный компонент страницы -->
+  <main class="dashboard-content">
+    <router-outlet />
+  </main>
+</div>
