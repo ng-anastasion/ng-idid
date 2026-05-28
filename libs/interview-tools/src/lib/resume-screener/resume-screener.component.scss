@@ -1,0 +1,18 @@
+:host {
+  height: 100%;
+  display: flex;
+}
+
+.pdf,
+.analytics {
+  width: 50%;
+  height: 100%;
+}
+
+.pdf {
+  background-color: lightcoral;
+}
+
+.analytics {
+  background-color: lightgreen;
+}
