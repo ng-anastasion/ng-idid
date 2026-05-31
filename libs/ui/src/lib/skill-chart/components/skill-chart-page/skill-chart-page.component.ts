@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
-
-// 🚀 Заменяем HighchartsChartModule на HighchartsChartComponent
 import * as Highcharts from 'highcharts'; // Надежный импорт самого ядра Highcharts
 import { HighchartsChartComponent } from 'highcharts-angular';
 
@@ -13,9 +11,10 @@ export interface ChartSkillData {
 
 @Component({
   selector: 'lib-skill-chart-page',
+  standalone: true,
   imports: [CommonModule, HighchartsChartComponent],
-  templateUrl: './skill-chart-page.html',
-  styleUrl: './skill-chart-page.scss',
+  templateUrl: './skill-chart-page.component.html',
+  styleUrl: './skill-chart-page.component.scss',
 })
 export class SkillChartPageComponent {
   // Нативный объект Highcharts для обертки
