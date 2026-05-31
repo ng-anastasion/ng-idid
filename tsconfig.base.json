@@ -14,7 +14,8 @@
     "paths": {
       "@ng-hire-up/interview-tools": ["libs/interview-tools/src/index.ts"],
       "@ng-hire-up/knowledge-base": ["libs/knowledge-base/src/index.ts"],
-      "@ng-hire-up/shared": ["libs/shared/src/index.ts"]
+      "@ng-hire-up/shared": ["libs/shared/src/index.ts"],
+      "@ng-hire-up/ui": ["libs/ui/src/index.ts"]
     }
   }
 }
