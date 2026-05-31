@@ -1,0 +1,237 @@
+.screener-grid {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 24px;
+  align-items: start;
+}
+
+.pdf-container {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pdf-viewer-placeholder {
+    text-align: center;
+    color: #94a3b8;
+
+    span {
+      font-size: 4rem;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zone-upload-another {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border: 2px dashed #dc2626;
+  /* Красный пунктир под аудит */
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #dc2626;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #fee2e2;
+  }
+}
+
+/* Карточка скоринга безопасности */
+.zone-score-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+
+  .score-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .progress-bar-bg {
+    background: #f1f5f9;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    transition: width 0.4s ease-out;
+  }
+
+  .verdict-text {
+    margin: 12px 0 0 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Цвета в зависимости от вердикта */
+  &.safe {
+    border-left: 5px solid #16a34a;
+
+    .score-percentage,
+    .verdict-text {
+      color: #16a34a;
+    }
+
+    .progress-bar-fill {
+      background: #16a34a;
+    }
+  }
+
+  &.caution {
+    border-left: 5px solid #d97706;
+
+    .score-percentage,
+    .verdict-text {
+      color: #d97706;
+    }
+
+    .progress-bar-fill {
+      background: #d97706;
+    }
+  }
+
+  &.danger {
+    border-left: 5px solid #dc2626;
+
+    .score-percentage,
+    .verdict-text {
+      color: #dc2626;
+    }
+
+    .progress-bar-fill {
+      background: #dc2626;
+    }
+  }
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Карточки аккордеонов */
+.zone-section-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+
+  .section-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .section-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+  }
+
+  .section-meta-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .severity-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    &.critical {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    &.minor {
+      background: #ffedd5;
+      color: #d97706;
+    }
+  }
+
+  .chevron {
+    transition: transform 0.2s;
+    color: #94a3b8;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  .section-content {
+    padding: 16px;
+    background: #f8fafc;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Цвета состояний строк */
+  &.success {
+    .status-icon {
+      color: #16a34a;
+    }
+
+    .section-title-group h3 {
+      color: #334155;
+    }
+  }
+
+  &.warning {
+    border-left: 4px solid #ea580c;
+
+    .status-icon {
+      color: #ea580c;
+    }
+
+    .criterion-text {
+      color: #c2410c;
+      font-weight: 500;
+    }
+  }
+
+  &.error {
+    border-left: 4px solid #dc2626;
+
+    .status-icon {
+      color: #dc2626;
+    }
+
+    .criterion-text {
+      color: #b91c1c;
+      font-weight: 500;
+    }
+  }
+}

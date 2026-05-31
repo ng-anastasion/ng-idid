@@ -1,1 +1,68 @@
-<p>contract-screener-page works!</p>
+<div class="screener-grid">
+  
+  <!-- Левая колонка: Договор -->
+  <div class="pdf-container">
+    <div class="pdf-viewer-placeholder">
+      <span class="material-icons">gavel</span>
+      <p>Текст анализируемого договора (PDF)</p>
+    </div>
+  </div>
+
+  <!-- Правая колонка: Юридический аудит -->
+  <div class="analytics-container">
+    
+    <!-- Зона 1: Кнопка перезагрузки -->
+    <div class="zone-upload-another">
+      <span class="material-icons">upload_file</span>
+      <span>Загрузить другой договор</span>
+    </div>
+
+    <!-- Зона 2: Индекс безопасности -->
+    <div class="zone-score-card" [ngClass]="safetyScore().colorClass">
+      <div class="score-header">
+        <span class="score-title">Индекс безопасности оффера</span>
+        <span class="score-percentage">{{ safetyScore().percentage }}%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" [style.width.%]="safetyScore().percentage"></div>
+      </div>
+      <p class="verdict-text">👉 {{ safetyScore().verdict }}</p>
+    </div>
+
+    <!-- Зоны 3-9: Аккордеоны пунктов договора -->
+    <div class="accordion-list">
+      @for (item of contractCriteria(); track item.id) {
+        <div class="zone-section-card" [ngClass]="item.status">
+          
+          <!-- Шапка аккордеона -->
+          <div class="section-header" (click)="toggleCriterion(item.id)">
+            <div class="section-title-group">
+              <span class="material-icons status-icon">{{ item.icon }}</span>
+              <h3>{{ item.name }}</h3>
+            </div>
+            
+            <div class="section-meta-group">
+              @if (item.status !== 'success') {
+                <span class="severity-badge" [ngClass]="item.severity">
+                  {{ item.severity === 'critical' ? 'Критично' : 'Внимание' }}
+                </span>
+              }
+              <span class="material-icons chevron" [class.rotated]="expandedCriterionId() === item.id">
+                expand_more
+              </span>
+            </div>
+          </div>
+
+          <!-- Контент аккордеона -->
+          @if (expandedCriterionId() === item.id) {
+            <div class="section-content">
+              <p class="criterion-text">{{ item.text }}</p>
+            </div>
+          }
+
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
