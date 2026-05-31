@@ -1,0 +1,15 @@
+.statistics-container {
+  padding: 8px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.chart-card {
+  /* Стили контейнера карточки, если понадобятся */
+  width: 100%;
+}

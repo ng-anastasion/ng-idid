@@ -11,7 +11,6 @@ export interface ChartSkillData {
 
 @Component({
   selector: 'lib-skill-chart-page',
-  standalone: true,
   imports: [CommonModule, HighchartsChartComponent],
   templateUrl: './skill-chart-page.component.html',
   styleUrl: './skill-chart-page.component.scss',

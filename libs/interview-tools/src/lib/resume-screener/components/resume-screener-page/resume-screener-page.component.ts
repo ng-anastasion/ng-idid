@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { SkillChartPageComponent } from '@ng-hire-up/ui';
-import { ABOUT_CRITERIA_REGISTRY, EDUCATION_CRITERIA_REGISTRY, EXPERIENCE_CRITERIA_REGISTRY, HEADER_CRITERIA_REGISTRY, JOB_CRITERIA_REGISTRY, MARKET_SKILLS_LIST, SKILLS_CRITERIA_REGISTRY } from '../../configs';
+import { ABOUT_CRITERIA_REGISTRY, EDUCATION_CRITERIA_REGISTRY, EXPERIENCE_CRITERIA_REGISTRY, HEADER_CRITERIA_REGISTRY, JOB_CRITERIA_REGISTRY, SKILLS_CRITERIA_REGISTRY } from '../../configs';
 
 // Импортируем наши справочники по разделам из shared
 // Замени путь '@ng-hire-up/shared' на твой реальный алиас, если он отличается
@@ -27,15 +26,11 @@ interface SectionUiUiCard {
 @Component({
   selector: 'lib-resume-screener-page',
   standalone: true,
-  imports: [CommonModule, MatIconModule, SkillChartPageComponent],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './resume-screener-page.component.html',
   styleUrl: './resume-screener-page.component.scss',
 })
 export class ResumeScreenerPageComponent {
-    // Вырезаем первые 10 самых популярных элементов для графика
-  // Так как массив MARKET_SKILLS_LIST статичен, мы можем сделать это плоским свойством
-  readonly marketSkillsData = MARKET_SKILLS_LIST.slice(0, 10);
-
   // 1. Сигнал для хранения ID раскрытого в данный момент раздела (null — все закрыты)
   readonly expandedSectionId = signal<string | null>('header');
 

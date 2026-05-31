@@ -11,8 +11,13 @@ export const INTERVIEW_TOOLS_ROUTES: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'resume-screener',
+        redirectTo: 'statistics',
         pathMatch:'full',
+      },
+      {
+        path: 'statistics',
+        title: 'Hire-Up | Статистика рынка',
+        loadComponent: () => import('./statistics/components/statistics-page/statistics-page.component').then((m) => m.StatisticsPage),
       },
       {
         path: 'resume-screener',

@@ -1,0 +1,21 @@
+<div class="statistics-container">
+  <div class="stats-grid">
+    
+    <!-- График 1: Востребованность технологий (Блок Навыки) -->
+    <div class="chart-card">
+      <lib-skill-chart-page 
+        [data]="topSkills" 
+        title="🔥 Топ-10 востребованных технологий (Раздел Навыки)">
+      </lib-skill-chart-page>
+    </div>
+
+    <!-- График 2: Ключевые слова (Блок Опыт работы) -->
+    <div class="chart-card">
+      <lib-skill-chart-page 
+        [data]="topKeywords" 
+        title="💼 Топ-10 ключевых слов (Раздел Опыт работы)">
+      </lib-skill-chart-page>
+    </div>
+
+  </div>
+</div>
