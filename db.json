@@ -51,16 +51,6 @@
       "difficulty": "Senior"
     },
     {
-      "title": "Перечислите типы данных в JS согласно последней документации?",
-      "answer": "8 типов",
-      "description": "",
-      "company": "none",
-      "technology": "JavaScript",
-      "topic": "types",
-      "difficulty": "Junior",
-      "id": "ZTtpaGYHvO0"
-    },
-    {
       "id": "7",
       "title": "@SkipSelf / @Self?",
       "answer": "@SkipSelf говорит пропусти текущий сервис ищи выше до рута, тк нам нужен инстанс сервиса parent компонента который выше",
