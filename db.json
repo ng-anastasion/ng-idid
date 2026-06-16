@@ -49,7 +49,7 @@
       "technology": "CI/CD",
       "topic": "deployment",
       "difficulty": "Senior"
-    },
+    }, 
     {
       "id": "7",
       "title": "@SkipSelf / @Self?",
@@ -179,6 +179,26 @@
       "id": "Zk4Pmw8Rt2X",
       "name": "Иван Иванов",
       "role": "admin"
+    }
+  ],
+  "balance": [
+    {
+      "category": "love"
+    },
+    {
+      "category": "money"
+    },
+    {
+      "category": "travel"
+    },
+    {
+      "category": "work"
+    },
+    {
+      "category": "business"
+    },
+    {
+      "category": "children"
     }
   ],
   "settings": {
