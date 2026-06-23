@@ -1,1 +1,57 @@
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->
+
+  <div class="app-container">
+    <!-- Шапка приложения с названием IDid -->
+    <header class="app-header">
+      <h1>idid — Мой Дневник Успехов</h1>
+      <!-- <nav class="menu">
+        <button class="menu-btn active">📖 Мой Дневник</button>
+        <button class="menu-btn" (click)="alertPlaceholder()">📊 Другой раздел</button>
+      </nav> -->
+    </header>
+  
+    <!-- Главный блок приложения -->
+    <main class="content">
+      <div class="diary-box">
+        <h2>Почему я молодец сегодня?</h2>
+        
+        <!-- Форма ввода новой победы -->
+        <div class="input-group">
+          <input #noteInput type="text" 
+                 placeholder="Я сегодня большая молодец, потому что..." 
+                 (keyup.enter)="save(noteInput.value); noteInput.value=''">
+          <button class="save-btn" (click)="save(noteInput.value); noteInput.value=''">Записать победу</button>
+        </div>
+
+        <div class="calendar-filter">
+          <label for="date-select">📆 Показать успехи за день:</label>
+          <!-- По умолчанию input пустой, что означает "Показать всё" -->
+          <input id="date-select" #datePicker type="date" (input)="filterByDate(datePicker.value)">
+          <button class="reset-btn" *ngIf="datePicker.value" (click)="datePicker.value=''; filterByDate('')">Показать все дни</button>
+        </div>
+
+        <!-- Список всех ваших записей -->
+        <ul class="notes-list">
+          @for (note of notes; track note.id) {
+            <li class="note-item">
+              <div class="note-content">
+                <!-- Форматируем дату в красивый привычный вид -->
+                <span class="note-date">{{ note.created_at | date:'dd.MM.yyyy' }}</span>
+                <p class="note-text">{{ note.content }}</p>
+              </div>
+              
+              <!-- Кнопки управления записью -->
+              <div class="actions">
+                <button class="action-btn edit" (click)="edit(note.id, note.content)">✏️</button>
+                <button class="action-btn delete" (click)="remove(note.id)">❌</button>
+              </div>
+            </li>
+          } @empty {
+            <!-- Блок покажется, если в базе еще нет ни одной строки -->
+            <p class="empty-msg">Вы пока не добавили ни одной записи. Самое время похвалить себя! ✨</p>
+          }
+        </ul>
+      </div>
+    </main>
+  </div>
+  

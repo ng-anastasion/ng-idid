@@ -35,7 +35,7 @@ libs/
   │     ├── resume-screener/    # Модуль скрининга резюме (справочники рынка, UI, сигналы)
   │     └── contract-screener/  # Модуль скрининга трудовых договоров и офферов (юридический аудит)
   ├── knowledge-base/     # Feature-либа: База знаний и интерактивные тесты для обучения (Training)
-  ├── shared/             # Data-Access либа: Общий сервис ItemsService, Firebase REST API, модели данных
+  ├── shared/             # Data-Access либа: Общий сервис ItemsService, Supabase, модели данных
   └── ui/                 # UI-Kit либа: Презентационные Dumb-компоненты (Sidebar, Header, графики Highcharts)
 
 ```
