@@ -39,7 +39,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build Angular Project
-        run: npx nx build hire-up --configuration=production --base-href /ng-hire-up/
+        run: npx nx build idid --configuration=production --base-href /ng-idid/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -47,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/apps/hire-up/browser
+          path: dist/apps/idid/browser
 
       - name: Deploy to GitHub Pages
         id: deployment

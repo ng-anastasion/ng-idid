@@ -1,9 +1,9 @@
 {
-  "name": "hire-up",
+  "name": "idid",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/hire-up/src",
+  "sourceRoot": "apps/idid/src",
   "tags": [],
   "targets": {
     "build": {
@@ -11,21 +11,21 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "assets": [
-          "apps/hire-up/src/assets",
+          "apps/idid/src/assets",
           {
             "glob": "**/*",
-            "input": "apps/hire-up/public",
+            "input": "apps/idid/public",
             "output": "/"
           }
         ],
-        "browser": "apps/hire-up/src/main.ts",
-        "index": "apps/hire-up/src/index.html",
+        "browser": "apps/idid/src/main.ts",
+        "index": "apps/idid/src/index.html",
         "inlineStyleLanguage": "scss",
-        "outputPath": "dist/apps/hire-up",
+        "outputPath": "dist/apps/idid",
         "polyfills": ["zone.js"],
-        "styles": ["apps/hire-up/src/styles.scss"],
+        "styles": ["apps/idid/src/styles.scss"],
         "scripts": [],
-        "tsConfig": "apps/hire-up/tsconfig.app.json"
+        "tsConfig": "apps/idid/tsconfig.app.json"
       },
       "configurations": {
         "production": {
@@ -58,15 +58,15 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "buildTarget": "hire-up:build:development",
+        "buildTarget": "idid:build:development",
         "proxyConfig": "proxy.conf.json"
       },
       "configurations": {
         "production": {
-          "buildTarget": "hire-up:build:production"
+          "buildTarget": "idid:build:production"
         },
         "development": {
-          "buildTarget": "hire-up:build:development"
+          "buildTarget": "idid:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "hire-up:build"
+        "buildTarget": "idid:build"
       }
     },
     "lint": {
@@ -84,15 +84,15 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/hire-up/jest.config.ts"
+        "jestConfig": "apps/idid/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "hire-up:build",
+        "buildTarget": "idid:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/hire-up/browser",
+        "staticFilePath": "dist/apps/idid/browser",
         "spa": true
       }
     }

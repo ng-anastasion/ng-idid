@@ -1,8 +1,8 @@
 export default {
-  displayName: 'hire-up',
+  displayName: 'idid',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/hire-up',
+  coverageDirectory: '../../coverage/apps/idid',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
