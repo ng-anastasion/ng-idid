@@ -1,16 +1,16 @@
 {
-  "name": "ng-hire-up",
+  "name": "ng-idid",
   "version": "0.0.0",
   "scripts": {
-    "start": "nx serve hire-up",
-    "build": "nx build hire-up",
+    "start": "nx serve idid",
+    "build": "nx build idid",
     "test": "nx test",
     "graph": "nx graph",
     "help": "nx help",
     "server": "json-server --watch db.json --port 3000 --host localhost",
-    "start:all": "concurrently \"npx nx serve hire-up\" \"npm run server\"",
-    "build:prod": "npx nx build hire-up --configuration=production --base-href /ng-hire-up/",
-    "deploy": "npm run build:prod && npx gh-pages -d dist/apps/hire-up/browser"
+    "start:all": "concurrently \"npx nx serve idid\" \"npm run server\"",
+    "build:prod": "npx nx build idid --configuration=production --base-href /ng-idid/",
+    "deploy": "npm run build:prod && npx gh-pages -d dist/apps/idid/browser"
   },
   "private": true,
   "dependencies": {

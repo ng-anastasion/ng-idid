@@ -49,6 +49,7 @@ testem.log
 Thumbs.db
 .env.local
 README_copy.md
+README_copy2.md
 
 # angular
 *.local.ts
